@@ -1,0 +1,191 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>DB Money - Add Entry</title> 
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+	</head>
+
+	<body>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/fg.menu.css">
+		<link rel="stylesheet" href="css/my.css">
+
+		<script src="js/jquery-1.11.3.min.js"></script>		
+        <script src="js/bootstrap-datepicker.js"></script>
+		<script src="js/fg.menu.js"></script>
+		<script src="js/bootstrap-typeahead.js"></script>
+
+			<div name="tab_header" id="tab_header">
+			
+				<ul class="nav nav-tabs" id="tab_items">
+				  <li><a href="#">Home</a></li>
+				  <li class="active"><a href="/add">Add</a></li>
+				  <li><a href="/list">List</a></li>
+				  <li><a href="#">About</a></li>
+				</ul>
+			</div> <!--tab_header -->
+			
+			<div name="main_body" id="main_body">
+			
+			    <div id="title" class="form-control"><b>Enter Transaction</b></div>
+			    </br>				
+			    <label class="sr-only" for="date">Date:</label>
+			    <input type="text" name="date" id="date" class="form-control">
+		        </br>
+		        </br>
+			    <label class="sr-only" for="type">Type:</label>
+			    <select type="text" name="type" id="type" class="form-control">
+                      <option value="Credit Card" selected="selected">Credit Card</option>
+                      <option value="Debit Card">Debit Card</option>
+                      <option value="Bill Pay">Bill Pay</option>
+					  <option value="Check">Check</option>
+					  <option value="Cash: Dean">Cash: Dean</option>
+					  <option value="Cash: Dawn">Cash: Dawn</option>
+                </select>
+			    </br>
+			    </br>
+
+			
+				
+				 <div class="row">
+                     <div class="col-sm-3" id="payee">
+					     <label class="sr-only" for="payee">Payee:</label>
+                         <input class="typeahead form-control" type="text" value="" placeholder="Payee" id="payee_input">
+                     </div>
+                     <div class="col-sm-3">
+                         <label class="sr-only" for="category">Category</label>
+                         <input a type="select" value="" Placeholder="Category" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all form-control" id="category"></a>					 
+                     </div>
+                     <div class="col-sm-2">
+					     <label class="sr-only" for="amount">Amount</label>
+	                     <input type="text" name="amount" id="amount" placeholder="Amount" class="form-control">
+					 </div>
+                     <div class="col-sm-2">
+					     <button id="add_button" name="add_button"></button>
+					 </div>
+                </div>
+
+			</div> <!--Body -->
+			
+			<div name="main_footer" id="main_footer">
+			    <label for="trans_id">trans_id:</label>
+			    <input type="text" name="trans_id" id="trans_id" class="form-control">
+			</div> <!--Footer -->		
+
+		<!-- Scripts -->
+		    <script type="text/javascript">
+                // When the document is ready
+                //#A97D5D
+                $(document).ready(function () {
+              
+                    $.getJSON( '/dbmoney/api/v1.0/categories', function( data ) {
+                        category_text = '<ul id="1" name="1">';
+                        $.each( data.categories, function( key, val ) {                        
+                            category_text += '<li><a href="#">' + key + "</a>";
+                            if (val.length > 0) {
+                                category_text += '<ul id="' + key +'">';
+                                for (i=0;i<val.length;i++) {
+                                    category_text += '<li><a href="#">' + val[i] +'</a></li>';
+                                }
+                                category_text += '</ul></li>';
+                            }
+
+                            else {
+                                category_text += '</li>';
+                            }
+
+                        });
+                        $('#category').menu({ content: category_text, flyOut: true });
+
+                    }); 
+
+			        $(function(){
+    	                // Set Categories
+    	                $('#category').hover(
+    		                function(){ $(this).removeClass('ui-state-default').addClass('ui-state-focus'); },
+    		                function(){ $(this).removeClass('ui-state-focus').addClass('ui-state-default'); }
+    	                );
+                    });
+					
+                    var substringMatcher = function(strs) {
+                        return function findMatches(q, cb) {
+                    var matches, substringRegex;
+                    // an array that will be populated with substring matches
+                    matches = [];
+
+                    // regex used to determine if a string contains the substring `q`
+                   substrRegex = new RegExp(q, 'i');
+
+                   // iterate through the pool of strings and for any string that
+                   // contains the substring `q`, add it to the `matches` array
+                   $.each(strs, function(i, str) {
+                       if (substrRegex.test(str)) {
+                           matches.push(str);
+                       }
+                   });
+
+                   cb(matches);
+                };
+                };
+                var payees = [];
+                $.getJSON( '/dbmoney/api/v1.0/payees', function( data ) {
+    
+                $.each( data.payees, function( key, val ) {
+        payees.push(val);
+
+    });
+
+}); 
+
+$('#payee .typeahead').typeahead({
+  hint: true,
+  highlight: true,
+  minLength: 1
+},
+{
+  name: 'states',
+  source: substringMatcher(payees)
+});
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////				
+					//set to default to today
+                    $("input[name*='date']").datepicker({
+                        format: "mm/dd/yyyy"
+                    });
+
+					var currentDate = new Date();
+					$("input[name*='date']").datepicker("setDate",currentDate);				
+					
+ 					$("#add_button").click(function(){
+
+				     var formData = {"date": $("#date").val(), "type": $("#type").val(), "payee": $("#payee_input").val(), "category": $("#category").val(), "trans_id": $("#trans_id").val(), "amount": $("#amount").val(), "notes":""};
+                       $.ajax({					  
+                            url: "/dbmoney/api/v1.0/transactions/add",
+                            type: "POST",
+						    data: JSON.stringify(formData),
+							contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+						    success: function(data, textStatus, jqXHR){
+                               //data - response from server
+							   alert("Amount Entered: " + $("#amount").val());
+							   //increase trans id to make it easier to enter
+							  $("#trans_id").val(parseInt($("#trans_id").val())+1);
+                            },
+						
+                                error: function (jqXHR, textStatus, errorThrown){
+     
+                            },
+						});	
+                    							
+					});	//add button close						 
+				});
+            </script>
+
+
+	</body>
+</html>

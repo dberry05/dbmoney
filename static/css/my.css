@@ -1,0 +1,172 @@
+body {
+    background: #5C755E;
+}
+
+select[type=text], input[type=text] {
+    display: inline-block;
+	background: #5C755E;
+	color: #F7DCB4;
+	height: 35px;
+	border-style: solid;
+	border-color: #A97D5D;
+	width: 175px;
+}
+
+ /* Used to overwrite the bootstrap default color for striping */
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #F7DCB4;
+ }
+
+.tt-menu {    /* used to be tt-dropdown-menu in older versions */
+  width: 422px;
+  margin-top: 4px;
+  border-color: #A97D5D;
+  padding: 4px 0;
+  background-color: #5C755E;
+  color: #F7DCB4;
+  border: 1px solid #ccc;
+
+}
+
+.tt-suggestion {
+  padding: 3px 20px;
+  line-height: 24px;
+  border-color: #A97D5D;
+}
+
+.tt-suggestion.tt-cursor,.tt-suggestion:hover {
+  color: #fff;
+  border-color: #A97D5D;
+  background-color: #0097cf;
+
+}
+
+.tt-suggestion p {
+  margin: 0;
+  border-color: #A97D5D;
+  
+}
+
+#tab_header {
+	border-radius: 10px;
+	border-style: solid;
+	border-color: #A97D5D;
+	border-width: 2px;
+	margin-left: 30px;
+	margin-bottom: 10px;
+	width: 768px;
+	height: 70px;
+	background: #9C9F84;
+}
+
+#main_body {
+	border:solid;
+	border-color: #A97D5D;
+	border-width: 2px;
+	border-radius: 10px;
+	margin-bottom: 15px;
+	margin-left: 30px;
+	background: #9C9F84;
+	width: 768px;
+	height: 275px;
+}
+#date {
+	color: #F7DCB4;
+    background: #5C755E;
+	border-style: solid;
+	border-color: #A97D5D;
+	border-width: 1px;
+	margin-left: 35px;
+	width: 175px;
+	height: 35px;	
+}
+
+#type {
+	margin-left: 30px;
+	width: 180px;
+	height: 35px;	
+}
+
+
+
+#amount {
+	margin-left: 50px;
+	margin-bottom: 10px;
+	width: 90px;
+	height: 35px;	
+}
+
+#category {
+	color: #F7DCB4;
+    background: #5C755E;
+	border-color: #A97D5D;
+	margin-bottom: 10px;
+	width: 225px;
+	height: 35px;	
+
+}
+
+#trans_id {
+	color: #F7DCB4;
+    background: #5C755E;
+	border-style: solid;
+	border-color: #A97D5D;
+	border-width: 1px;
+	margin-left: 50px;
+	margin-right: 10px;
+	margin-top: 25px;
+	margin-bottom: 10px;
+	width: 165px;
+	height: 30px;
+}
+
+#main_footer {
+	border-style: solid;
+	border-color:#A97D5D;
+	border-width: 2px;
+	border-radius: 10px;
+    margin-left: 30px;
+	width: 768px;
+	height: 90px;
+	background: #9C9F84;
+}
+
+#title {
+	border-style: solid;
+	text-align: right;
+	border-color: #A97D5D;
+	border-width: 2px;
+    margin-top: 10px;
+    margin-left: 58px;
+	width: 675px;
+	height: 30px;
+	background: #9C9F84;
+}
+
+#add_button {
+	border: none;
+	margin-top: 2px;
+    margin-left: 30px;
+    width: 35px;
+    height: 35px;
+	background-color: Transparent;
+    background-image: url('../img/plus.png');
+    background-repeat: no-repeat;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+#payee {
+	margin-left: 70px;
+
+}
+
+
+
+
+
+
+
+

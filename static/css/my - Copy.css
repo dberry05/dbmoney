@@ -1,0 +1,158 @@
+body {
+    background: #5C755E;
+}
+
+.category, .item, .chzn-container-single .chzn-single {
+    font-family: sans-serif}
+
+.category {font-weight: bold}
+
+.chzn-results li.item {padding-left: 25px;}
+
+label, select[type=text], input[type=text] {
+    display: inline-block;
+	width: 20px;
+}
+
+ /* Used to overwrite the bootstrap default color for striping */
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #F7DCB4;
+ }
+
+#outer_frame {
+    background: #5C755E;
+}
+
+#tab_header {
+	border-radius: 10px;
+	border-style: solid;
+	border-color: white;
+	border-width: 2px;
+	margin-left: 30px;
+	margin-bottom: 10px;
+	width: 768px;
+	height: 70px;
+	background: #A97D5D;
+}
+
+#main_body {
+	border-style: solid;
+	border-color: white;
+	border-width: 2px;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	margin-left: 30px;
+	width: 768px;
+	background: #9C9F84;
+}
+#date {
+	color: #F7DCB4;
+    background: #5C755E;
+	border-style: solid;
+	border-color: white;
+	border-width: 1px;
+	margin-left: 30px;
+	width: 175px;
+	height: 30px;	
+}
+
+#type {
+    color: #F7DCB4;
+    background: #5C755E;
+	border-style: solid;
+	border-color: white;
+	border-width: 1px;
+	margin-left: 30px;
+	width: 175px;
+	height: 30px;	
+}
+
+#payee {
+	color: #F7DCB4;
+    background: #5C755E;
+	border-style: solid;
+	border-color: white;
+	border-width: 1px;
+	margin-left: 30px;
+	margin-bottom: 10px;
+	width: 175px;
+	height: 30px;	
+
+}
+#amount {
+	color: #F7DCB4;
+    background: #5C755E;
+	border-style: solid;
+	border-color: white;
+	border-width: 1px;
+	margin-left: 50px;
+	margin-bottom: 10px;
+	width: 90px;
+	height: 30px;	
+}
+
+#category {
+	color: #F7DCB4;
+    background: #5C755E;
+	border-style: solid;
+	border-color: white;
+	border-width: 1px;
+	margin-left: 50px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	width: 165px;
+	height: 30px;	
+
+}
+
+#trans_id {
+	color: #F7DCB4;
+    background: #5C755E;
+	border-style: solid;
+	border-color: white;
+	border-width: 1px;
+	margin-left: 50px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	width: 165px;
+	height: 30px;	
+
+}
+
+#main_footer {
+	border-style: solid;
+	border-color: white;
+	border-width: 2px;
+	border-radius: 10px;
+    margin-left: 30px;
+	width: 768px;
+	height: 90px;
+	background: #9C9F84;
+}
+
+#title {
+	border-style: solid;
+	text-align: right;
+	border-color: white;
+	border-width: 2px;
+    margin-top: 30px;
+    margin-left: 58px;
+	width: 675px;
+	height: 30px;
+	background: #9C9F84;
+}
+
+#add_button {
+	margin: 10px;
+    width: 30px;
+    height: 30px;
+	background-color: Transparent;
+    background-image: url('../img/plus.png');
+    background-repeat: no-repeat;
+	border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+

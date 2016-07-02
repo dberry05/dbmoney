@@ -1,0 +1,49 @@
+Split transactions - 
+Split category into category and subcateegory
+Update parking on 1/3 4.90 as dawns debit card.
+Update Atnt to AT&T and 44.79
+
+Reconcilliation page way later in the future.
+Set list page to show only month or only un-reconciled transactions
+Find way to split cash and then remove cash bucket as it is spent.
+
+Add Column for paid - Default to true.
+Remove Column for sub category
+
+Find best way to get bill pay information entered into.
+Find best way to figure out how to input health care expense and payments
+Find a way to filter list view by columns, like all safeway items 
+
+way to do double transactions, ie; credit card payments are not recorded in monthly expenses but should dind a way to value in cash flow calculation which has not yet been determined.
+-------------------------------------------------
+Add transaction when I figure out how I want to do this.
+1/3 Fred Meyer
+25 groceries
+25 sundries
+21.59 cash
+70 total
+
+1/7 ann taylor
+
+38.35+ Dean CC
+1.09+  Dean CC
+
+147.55 Dawn CC
+
+~108.22
+
+--------------------------------------------------
+
+Find way to tag recurring payments and auto add and report things like cell phone and gym every month.
+just make button to run job then compare against what is already in table and just ignore, no new changes or changes added.
+
+Netflix recurring 1/2 8.76
+ATNT recurring 1/2 44.79 Utilities: Cell Phone Dean
+Virgin Mobile Recurring 1/8 50.21 Utilities: Cell Phone Olivia
+Seattle School of Aikido 	71.24 02/03/2016
+Seattle School of Aikido 	71.24 02/03/2016
+
+
+
+
+
